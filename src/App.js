@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 const url = "https://randomuser.me/api/";
 const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [person, setPerson] = useState(null);
@@ -52,7 +53,13 @@ function App() {
   }, []);
 
   const handleValue = (event) => {
-    console.log(event.target);
+    if (event.target.classList.contains("icon")) {
+      const newValue = event.target.dataset.label;
+      // console.log(newValue);
+      // console.log(person);
+      setTitle(newValue);
+      setValue(person[newValue]);
+    }
   };
 
   return (
@@ -81,14 +88,14 @@ function App() {
             >
               <FaEnvelopeOpen></FaEnvelopeOpen>
             </button>
-            <button
-              className="icon"
-              data-label="calender"
-              onMouseOver={handleValue}
-            >
+            <button className="icon" data-label="age" onMouseOver={handleValue}>
               <FaCalendarTimes></FaCalendarTimes>
             </button>
-            <button className="icon" data-label="map" onMouseOver={handleValue}>
+            <button
+              className="icon"
+              data-label="street"
+              onMouseOver={handleValue}
+            >
               <FaMap></FaMap>
             </button>
             <button
@@ -100,7 +107,7 @@ function App() {
             </button>
             <button
               className="icon"
-              data-label="lock"
+              data-label="password"
               onMouseOver={handleValue}
             >
               <FaLock></FaLock>
