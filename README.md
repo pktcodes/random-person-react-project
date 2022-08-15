@@ -26,4 +26,4 @@ Netlify
 npm install react-icons
 ```
 
-*Note: I have developed this project ~ [17] on part of React and Projects Course thought by John Smilga.*
+*Note: I have developed this project ~ [17] as part of React and Projects Course taught by John Smilga..*
